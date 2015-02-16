@@ -1,0 +1,15 @@
+<p>
+  <% if @status == 'paid'%>
+    Payment was successful
+  <% else %>
+    Payment wasn't successful
+  <% end %>
+</p>
+<form id="check-form" action="<%= @back_url%>" method="post">
+  <input type="hidden" name="order_no" value="<%= @order_no %>" />
+  <input type="hidden" name="token" value="<%= @token %>">
+  <input type="hidden" name="status" value="<%= @status %>">
+</form>
+<script>
+  document.getElementById('check-form').submit();
+</script>

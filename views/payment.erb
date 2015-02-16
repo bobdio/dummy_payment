@@ -1,0 +1,32 @@
+<div style="width: 1200px; margin: 0 auto;">
+    <h2>Dummy paymet service</h2>
+    <div id="order">
+      <form action="<%= url("/check") %>" method="post">
+          <input type="hidden" name="order_no" value="<%= params[:order][:order_no]%>">
+          <table>
+              <tr>
+                  <td>Order #</td>
+                  <td><%= params[:order][:order_no]%></td>
+              </tr>
+              <tr>
+                  <td>Price:</td>
+                  <td><%= params[:order][:price]%>$</td>
+              </tr>
+              <tr>
+                  <td>Your card number:</td>
+                  <td><input type="text" name="card[cumber]" required></td>
+              </tr>
+              <tr>
+                  <td>Your card CVV:</td>
+                  <td><input type="text" name="card[cvv]" required></td>
+              </tr>
+              <tr>
+                  <td></td>
+                  <td>
+                      <button type="submit">Pay</button>
+                  </td>
+              </tr>
+        </table>
+      </form>
+    </div>
+</div>
